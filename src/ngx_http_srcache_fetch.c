@@ -67,7 +67,7 @@ ngx_http_srcache_access_handler(ngx_http_request_t *r)
             /* register a ctx to give a chance to srcache_store to run */
 
             ctx = ngx_pcalloc(r->pool,
-                              sizeof(ngx_http_srcache_filter_module));
+                              sizeof(ngx_http_srcache_ctx_t));
 
             if (ctx == NULL) {
                 return NGX_ERROR;
@@ -95,7 +95,7 @@ ngx_http_srcache_access_handler(ngx_http_request_t *r)
 
         /* register a ctx to give a chance to srcache_store to run */
 
-        ctx = ngx_pcalloc(r->pool, sizeof(ngx_http_srcache_filter_module));
+        ctx = ngx_pcalloc(r->pool, sizeof(ngx_http_srcache_ctx_t));
 
         if (ctx == NULL) {
             return NGX_ERROR;
@@ -189,7 +189,7 @@ ngx_http_srcache_access_handler(ngx_http_request_t *r)
         }
 
     } else {
-        ctx = ngx_pcalloc(r->pool, sizeof(ngx_http_srcache_filter_module));
+        ctx = ngx_pcalloc(r->pool, sizeof(ngx_http_srcache_ctx_t));
 
         if (ctx == NULL) {
             return NGX_ERROR;

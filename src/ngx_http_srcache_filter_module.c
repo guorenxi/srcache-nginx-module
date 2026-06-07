@@ -428,7 +428,7 @@ ngx_http_srcache_conf_set_request(ngx_conf_t *cf, ngx_command_t *cmd,
     /* compile the args arg */
 
     if (value[3].len == 0) {
-        ngx_memzero(&rp->location, sizeof(ngx_http_complex_value_t));
+        ngx_memzero(&rp->args, sizeof(ngx_http_complex_value_t));
         return NGX_CONF_OK;
     }
 
